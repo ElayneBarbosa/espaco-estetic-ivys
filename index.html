@@ -11,7 +11,58 @@
     <a class="skip-link" href="#main-content">Saltar para o conteúdo principal</a>
     <a class="skip-link" href="#footer-content">Ir para o rodapé</a>
     
-    <header id="site-header"></header>
+    <header id="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">Espaço Estetic Ivy's</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Menu Principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Por Que Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta-group">
+                <a href="tel:85982024591" class="phone-link" aria-label="Telefone (85) 98202-4591">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>(85) 98202-4591</span>
+                </a>
+                <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Agendar no WhatsApp">Agendar Horário</a>
+            </div>
+
+            <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir Menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div id="mobile-menu" class="offcanvas-menu" aria-hidden="true">
+        <div class="offcanvas-content">
+            <div class="offcanvas-header">
+                <span class="logo">Espaço Estetic Ivy's</span>
+                <button class="offcanvas-close" aria-label="Fechar Menu">&times;</button>
+            </div>
+            <nav class="mobile-nav" aria-label="Menu Mobile">
+                <ul class="nav-list-mobile">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Por Que Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="offcanvas-footer">
+                <p>Seguindo rigorosa biossegurança</p>
+                <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s" target="_blank" rel="noopener noreferrer" class="btn-primary w-100">Agendar pelo WhatsApp</a>
+            </div>
+        </div>
+        <div class="offcanvas-backdrop"></div>
+    </div>
     <main id="main-content"></main>
     <footer id="footer-content"></footer>
 

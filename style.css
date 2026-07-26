@@ -56,3 +56,306 @@ body {
 .skip-link:focus {
     top: 10px;
 }
+
+#site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(242, 208, 215, 0.6);
+    z-index: 100;
+    padding: 16px 24px;
+    transition: var(--transition-normal);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.logo:hover {
+    color: var(--color-accent);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 500;
+    transition: var(--transition-normal);
+    font-size: 0.95rem;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition-normal);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: var(--color-accent);
+}
+
+.header-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.phone-link svg {
+    stroke: var(--color-primary);
+}
+
+.phone-link:hover {
+    color: var(--color-accent);
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: white;
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1003;
+}
+
+/* Hamburger Line Graphic */
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-main);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-main);
+    position: absolute;
+    left: 0;
+    transition: var(--transition-normal);
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    bottom: -6px;
+}
+
+/* Active Hamburger state */
+.mobile-nav-toggle[aria-expanded="true"] .hamburger {
+    background: transparent;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* Offcanvas Drawer Styles */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    visibility: hidden;
+    transition: visibility var(--transition-normal);
+}
+
+.offcanvas-menu.active {
+    visibility: visible;
+}
+
+.offcanvas-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: var(--color-bg-light);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 24px;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: 1002;
+    border-left: 1px solid var(--color-secondary);
+}
+
+.offcanvas-menu.active .offcanvas-content {
+    transform: translateX(0);
+}
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.offcanvas-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-main);
+    cursor: pointer;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+}
+
+.offcanvas-close:hover {
+    color: var(--color-accent);
+}
+
+.mobile-nav {
+    margin-bottom: auto;
+}
+
+.nav-list-mobile {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-list-mobile a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+    transition: var(--transition-normal);
+    border-bottom: 1px solid rgba(166, 118, 126, 0.1);
+}
+
+.nav-list-mobile a:hover {
+    color: var(--color-accent);
+    padding-left: 8px;
+}
+
+.offcanvas-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.offcanvas-footer p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 46, 53, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 1001;
+}
+
+.offcanvas-menu.active .offcanvas-backdrop {
+    opacity: 1;
+}
+
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-nav-toggle {
+        display: flex;
+    }
+}
