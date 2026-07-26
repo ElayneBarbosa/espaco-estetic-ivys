@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primary: #A6767E;
+    --color-secondary: #F2D0D7;
+    --color-accent: #BF8091;
+    --color-muted-grey: #BFAAB0;
+    
+    --color-bg-light: #FFF9FA;
+    --color-bg-white: #FFFFFF;
+    --color-text-main: #4A2E35;
+    --color-text-muted: #8C666E;
+    
+    --font-headings: 'Lora', serif;
+    --font-body: 'Raleway', sans-serif;
+    
+    --shadow-sm: 0 4px 12px rgba(166, 118, 126, 0.08);
+    --shadow-md: 0 8px 24px rgba(166, 118, 126, 0.12);
+    --shadow-lg: 0 16px 40px rgba(166, 118, 126, 0.16);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: var(--color-accent);
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
