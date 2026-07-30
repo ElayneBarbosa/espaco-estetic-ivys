@@ -5,10 +5,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copia apenas os arquivos estritamente necessários para o site funcionar
-COPY index.html .
-COPY css/ ./css/
-COPY js/ ./js/
-COPY fotos/ ./fotos/
+COPY ..
 
 # Expõe a porta e inicia o servidor
 EXPOSE 80
