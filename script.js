@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Espaço Estetic Ivy's site loaded successfully.");
-
     /* =============================================
        1. MOBILE NAVIGATION (Offcanvas)
     ============================================= */
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =============================================
-       2. STICKY HEADER – adds shadow on scroll
+       2. STICKY HEADER (Performance: passive true)
     ============================================= */
     const header = document.getElementById('site-header');
     if (header) {
@@ -46,11 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =============================================
-       3. SMOOTH SCROLL for nav anchors
+       3. SMOOTH SCROLL PARA LINKS INTERNOS
     ============================================= */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const targetId = anchor.getAttribute('href');
+            if (targetId === '#') return;
+
+            const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
                 const offset = header ? header.offsetHeight : 80;
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =============================================
-       4. SERVICES TABS
+       4. TABS DOS SERVIÇOS
     ============================================= */
     const tabs = document.querySelectorAll('.service-tab');
     const panels = document.querySelectorAll('.services-panel');
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =============================================
-       5. ACCORDION
+       5. ACCORDION (SANFONAS)
     ============================================= */
     document.querySelectorAll('.accordion-trigger').forEach(trigger => {
         trigger.addEventListener('click', () => {
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =============================================
-       6. TESTIMONIALS CAROUSEL (Multi-cards / Páginas)
+       6. CARROSSEL DE DEPOIMENTOS
     ============================================= */
     const track = document.getElementById('testimonials-track');
     const dotsContainer = document.getElementById('carousel-dots');
@@ -121,14 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentPage = 0;
         let cardsPerView = getCardsPerView();
 
-        // Quantos depoimentos mostrar com base no tamanho da tela
         function getCardsPerView() {
-            if (window.innerWidth <= 768) return 1; // 1 no celular
-            if (window.innerWidth <= 992) return 2; // 2 no tablet
-            return 3; // 3 no computador
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 992) return 2;
+            return 3;
         }
 
-        // Cria as bolinhas exatas para as "Páginas"
         function buildDots() {
             dotsContainer.innerHTML = '';
             const totalPages = Math.ceil(cards.length / cardsPerView);
@@ -153,11 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let cardIndex = currentPage * cardsPerView;
             const maxIndex = cards.length - cardsPerView;
-            // Evita criar um espaço vazio no final caso não seja múltiplo exato
             if (cardIndex > maxIndex && maxIndex >= 0) cardIndex = maxIndex;
 
             const cardWidth = cards[0].offsetWidth;
-            const gap = 24; // Gap definido no CSS
+            const gap = 24;
             const moveAmount = cardIndex * (cardWidth + gap);
 
             track.style.transform = `translateX(-${moveAmount}px)`;
@@ -165,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
             getDots().forEach((d, i) => d.classList.toggle('active', i === currentPage));
         }
 
-        // Se o cliente girar o celular ou redimensionar a tela, ajusta sozinho
         window.addEventListener('resize', () => {
             const newCardsPerView = getCardsPerView();
             if (newCardsPerView !== cardsPerView) {
@@ -178,13 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Inicializa
         buildDots();
 
         prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
         nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
 
-        // Passa sozinho a cada 6 segundos
+        // Autoplay
         let autoplay = setInterval(() => goToPage(currentPage + 1), 6000);
         [prevBtn, nextBtn, dotsContainer].forEach(el => {
             el.addEventListener('click', () => {
@@ -195,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =============================================
-       7. CONTACT FORM – redirect to WhatsApp
+       7. FORMULÁRIO DE CONTATO (Redirecionamento Inteligente)
     ============================================= */
     const form = document.getElementById('contact-form');
     if (form) {
@@ -225,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =============================================
-       8. SCROLL-TO-TOP BUTTON
+       8. BOTÃO SCROLL-TO-TOP (Performance: passive true)
     ============================================= */
     const scrollTopBtn = document.getElementById('scroll-top-btn');
     if (scrollTopBtn) {
@@ -239,13 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =============================================
-       9. FOOTER YEAR
+       9. ANO DINÂMICO NO RODAPÉ
     ============================================= */
     const yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     /* =============================================
-       10. SCROLL-REVEAL ANIMATION (Intersection Observer)
+       10. ANIMAÇÕES DE REVELAÇÃO (Intersection Observer SEO-Friendly)
     ============================================= */
     const revealEls = document.querySelectorAll(
         '.mvv-card, .diff-card, .testimonial-card, .accordion-item, .contact-list li, .contact-form-card'
