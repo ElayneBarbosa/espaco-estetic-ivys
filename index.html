@@ -7,7 +7,7 @@
 
     <title>Clínica de Estética em Fortaleza | Espaço Estetic Ivy's</title>
     <meta name="description"
-        content="O seu refúgio de beleza em Fortaleza. Atendemos Guajeru, Messejana e Lagoa Redonda com excelência em design de sobrancelhas, maquiagem, limpeza de pele e estética corporal.">
+        content="O seu refúgio de autocuidado e estética em Fortaleza. Tratamentos faciais e corporais personalizados para você se sentir incrível.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- CSS CRÍTICO -->
+    <!-- CSS CRÍTICO (Incluindo a animação do botão mobile) -->
     <style>
         :root {
             --color-primary: #A6767E;
@@ -75,6 +75,7 @@
             border-bottom: 1px solid rgba(242, 208, 215, 0.6);
             z-index: 100;
             padding: 16px 24px;
+            transition: 300ms ease;
         }
 
         .header-container {
@@ -104,6 +105,8 @@
             color: var(--color-text-main);
             font-weight: 500;
             font-size: 0.95rem;
+            position: relative;
+            padding: 4px 0;
         }
 
         .header-cta-group {
@@ -136,6 +139,7 @@
             cursor: pointer;
         }
 
+        /* Botão Mobile com Animação Restaurada */
         .mobile-nav-toggle {
             display: none;
             background: none;
@@ -144,6 +148,7 @@
             height: 44px;
             position: relative;
             z-index: 1003;
+            cursor: pointer;
         }
 
         .hamburger,
@@ -154,16 +159,38 @@
             height: 2px;
             background: var(--color-text-main);
             position: absolute;
+            transition: 300ms ease;
+        }
+
+        .hamburger {
+            top: 20px;
+            left: 10px;
         }
 
         .hamburger::before {
             content: '';
             top: -6px;
+            left: 0;
         }
 
         .hamburger::after {
             content: '';
             bottom: -6px;
+            left: 0;
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger {
+            background: transparent;
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
         }
 
         .hero-section {
@@ -309,6 +336,7 @@
         <link rel="stylesheet" href="style.css">
     </noscript>
 
+    <!-- Schema Local -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -318,7 +346,7 @@
       "description": "Clínica de estética em Fortaleza especializada em realçar a beleza natural com serviços de design de sobrancelha, maquiagem e estética facial.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua B 52, Guajeru",
+        "streetAddress": "Bairro Guajeru",
         "addressLocality": "Fortaleza",
         "addressRegion": "CE",
         "addressCountry": "BR"
@@ -355,7 +383,8 @@
                     </svg>
                     <span>(85) 98202-4591</span>
                 </a>
-                <a href="https://wa.me/5585982024591" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+                    target="_blank" rel="noopener noreferrer" class="btn-primary"
                     aria-label="Agendar no WhatsApp">Agendar Horário</a>
             </div>
             <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir Menu">
@@ -380,8 +409,8 @@
             </nav>
             <div class="offcanvas-footer">
                 <p>Seguindo rigorosa biossegurança</p>
-                <a href="https://wa.me/5585982024591" target="_blank" rel="noopener noreferrer"
-                    class="btn-primary w-100">Agendar pelo WhatsApp</a>
+                <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+                    target="_blank" rel="noopener noreferrer" class="btn-primary w-100">Agendar pelo WhatsApp</a>
             </div>
         </div>
         <div class="offcanvas-backdrop"></div>
@@ -396,8 +425,9 @@
                     <p class="hero-description">O seu refúgio de autocuidado e estética em Fortaleza. Oferecemos
                         tratamentos faciais e corporais personalizados para você se sentir incrível todos os dias.</p>
                     <div class="hero-cta">
-                        <a href="https://wa.me/5585982024591" target="_blank" rel="noopener noreferrer"
-                            class="btn-primary btn-hero">Agende seu Horário | Fale no WhatsApp</a>
+                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+                            target="_blank" rel="noopener noreferrer" class="btn-primary btn-hero">Agende seu Horário |
+                            Fale conosco no WhatsApp</a>
                     </div>
                 </div>
                 <div class="hero-grid" aria-label="Galeria Decorativa">
@@ -420,7 +450,6 @@
                     <div class="about-content">
                         <span class="section-tagline">Nossa História</span>
                         <h2 class="section-heading">Fundada com carinho por Ivyna Ellen</h2>
-                        <!-- TEXTO ORIGINAL DA FUNDAÇÃO DEVOLVIDO -->
                         <p class="about-paragraph">Fundado em 2021 pela Esteticista Ivyna Ellen, nossa clínica nasceu de
                             um sonho: realçar a beleza única de cada mulher e proporcionar uma autoestima renovada por
                             meio de um atendimento acolhedor, cuidadoso e cheio de carinho.</p>
@@ -433,8 +462,8 @@
                             certeza de que cuidar de si mesma é um gesto de amor.</p>
                     </div>
                     <div class="about-image-card">
-                        <img src="fotos/foto-profissional.png" alt="Ivyna Ellen Esteticista" loading="lazy">
-                        <img src="fotos/foto-profissional-2.png" alt="Atendimento clínico" loading="lazy">
+                        <img src="fotos/foto-profissional.png" alt="Ivyna Ellen Profissional" loading="lazy">
+                        <img src="fotos/foto-profissional-2.png" alt="Ivyna Ellen Profissional 2" loading="lazy">
                     </div>
                 </div>
                 <div class="mvv-grid">
@@ -483,7 +512,7 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS -->
+        <!-- SERVIÇOS E TRATAMENTOS -->
         <section id="servicos" class="services-section">
             <div class="section-container">
                 <div class="section-header-centered">
@@ -502,10 +531,10 @@
                         id="btn-eventos">Produção para Eventos</button>
                 </div>
 
+                <!-- Painel: Estética Facial -->
                 <div class="services-panel active" id="tab-face" role="tabpanel">
                     <div class="accordion" id="acc-face">
 
-                        <!-- Limpeza de Pele -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Limpeza de Pele</span>
@@ -521,15 +550,14 @@
                                         <div class="service-image-gallery">
                                             <img src="fotos/limpeza-pele.jpg" alt="Limpeza de Pele" loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Limpeza%20de%20Pele"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Pele iluminada, jovem e saudável</h3>
                                         <p>Realizamos protocolos faciais personalizados para atender às necessidades
                                             específicas da sua pele. Trabalhamos com três tipos de limpeza de pele:</p>
-
                                         <strong>Limpeza de Pele Classic</strong>
                                         <p>Indicada para os nossos pacientes que buscam apenas a remoção de cravos.</p>
                                         <ul class="service-protocol-list">
@@ -538,14 +566,12 @@
                                             <li>Tônico e Alta frequência</li>
                                             <li>Fotoprotetor</li>
                                         </ul>
-
                                         <strong>Limpeza de Pele Premium</strong>
                                         <p>Indicada para os nossos pacientes que buscam a retirada dos cravos e
                                             tratamento específico de acne, manchas, oleosidade ou/e poros dilatados.</p>
                                         <ul class="service-protocol-list">
                                             <li>Protocolo Classic + 2 máscaras de tratamento</li>
                                         </ul>
-
                                         <strong>Limpeza de Pele Premium c/ Fototerapia</strong>
                                         <p>Indicada para busca de tratamento mais intenso e específico (inclui peeling
                                             químico).</p>
@@ -557,7 +583,6 @@
                             </div>
                         </div>
 
-                        <!-- Microagulhamento -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Microagulhamento</span>
@@ -573,11 +598,11 @@
                                         <div class="service-image-gallery">
                                             <img src="fotos/microagulhamento.jpg" alt="Microagulhamento" loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Microagulhamento"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Renovação Profunda e Colágeno</h3>
                                         <p>É um tratamento estético feito com pequenas agulhas que perfuram a pele para
                                             estimular colágeno, reduzir cicatrizes de acne e melhorar rugas.</p>
@@ -589,7 +614,6 @@
                             </div>
                         </div>
 
-                        <!-- Retirada de Sinais -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Retirada de Sinais</span>
@@ -606,11 +630,11 @@
                                             <img src="fotos/retirada-sinais.jpg" alt="Retirada de Sinais"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20avalia%C3%A7%C3%A3o%20para%20Retirada%20de%20Sinais"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Precisão Sem Cortes</h3>
                                         <p>A retirada de sinais com jato de plasma é um tratamento estético que usa um
                                             aparelho gerador de gás ionizado para cauterizar e eliminar pequenas lesões
@@ -626,7 +650,6 @@
                             </div>
                         </div>
 
-                        <!-- Design de Sobrancelhas -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Design de Sobrancelhas</span>
@@ -641,14 +664,14 @@
                                     <div class="service-media-col">
                                         <div class="service-image-gallery">
                                             <img src="fotos/Design-henna-2.jpg" alt="Design com henna" loading="lazy">
-                                            <img src="fotos/sobrancelha-henna.jpg" alt="Sobrancelha mapeada"
+                                            <img src="fotos/sobrancelha-henna.jpg" alt="Sobrancelha Henna"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Agendar Design</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Design%20de%20Sobrancelhas"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Harmonia para o seu Rosto</h3>
                                         <p>Moldamos o seu olhar de forma harmônica com as linhas do seu rosto.
                                             Utilizamos técnicas de mapeamento facial para garantir um resultado natural
@@ -660,7 +683,6 @@
                             </div>
                         </div>
 
-                        <!-- Brow Lamination -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Brow Lamination</span>
@@ -677,11 +699,11 @@
                                             <img src="fotos/Brow-lamination-coloracao.jpeg" alt="Brow Lamination"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Brow%20Lamination"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Volume e Alinhamento</h3>
                                         <p>Técnica moderna que alinha, texturiza e encorpa os fios naturais das
                                             sobrancelhas, proporcionando um efeito de maior volume e preenchimento.</p>
@@ -692,7 +714,6 @@
                             </div>
                         </div>
 
-                        <!-- Micropigmentação -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Micropigmentação de Sobrancelhas</span>
@@ -706,16 +727,16 @@
                                 <div class="service-grid-layout">
                                     <div class="service-media-col">
                                         <div class="service-image-gallery">
-                                            <img src="fotos/micropigmentacao-antes.png" alt="Antes da Micropigmentação"
+                                            <img src="fotos/micropigmentacao-antes.png" alt="Micropigmentação Antes"
                                                 loading="lazy">
-                                            <img src="fotos/micropigmentacao-depois.png"
-                                                alt="Depois da Micropigmentação" loading="lazy">
+                                            <img src="fotos/micropigmentacao-depois.png" alt="Micropigmentação Depois"
+                                                loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Micropigmenta%C3%A7%C3%A3o"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Efeito Esfumado e Naturalidade</h3>
                                         <p>É uma técnica avançada de maquiagem definitiva para sobrancelhas que cria um
                                             efeito esfumado suave e aveludado, simulando o preenchimento de uma sombra
@@ -727,7 +748,6 @@
                             </div>
                         </div>
 
-                        <!-- Lash Lifting -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Lash Lifting</span>
@@ -743,13 +763,13 @@
                                         <div class="service-image-gallery">
                                             <img src="fotos/Lash-lifting.jpeg" alt="Lash Lifting" loading="lazy">
                                             <img src="fotos/Lash-lifting-e-design-personalizado.jpg"
-                                                alt="Lash Lifting e Design" loading="lazy">
+                                                alt="Lash Lifting Personalizado" loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Lash%20Lifting"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Curvatura e Alongamento Natural</h3>
                                         <p>Tratamento que cria uma curvatura e alongamento nos seus próprios cílios
                                             naturais, realçando o olhar com um efeito de máscara de cílios.</p>
@@ -760,7 +780,6 @@
                             </div>
                         </div>
 
-                        <!-- Extensão de Cílios -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Extensão de Cílios</span>
@@ -778,15 +797,15 @@
                                             <img src="fotos/cilios-Volume-Beauty.jpg" alt="Volume Beauty"
                                                 loading="lazy">
                                             <img src="fotos/cilios-Volume-Beauty-e-brow-lamination.jpg"
-                                                alt="Volume e Brow Lamination" loading="lazy">
-                                            <img src="fotos/cilios-Volume-luxo-e-design-henna.jpg" alt="Volume Luxo"
-                                                loading="lazy">
+                                                alt="Volume Beauty Lamination" loading="lazy">
+                                            <img src="fotos/cilios-Volume-luxo-e-design-henna.jpg"
+                                                alt="Volume Luxo Henna" loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
-                                            style="text-align: center;">Marcar Avaliação</a>
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Extens%C3%A3o%20de%20C%C3%A3lios"
+                                            target="_blank" class="btn-primary w-100" style="text-align: center;">Marcar
+                                            Avaliação pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Acorde Pronta Todos os Dias!</h3>
                                         <p>Oferecemos diversas técnicas de extensão para garantir o volume e o
                                             comprimento perfeitos, sem abrir mão da saúde dos seus fios naturais.</p>
@@ -804,9 +823,9 @@
                     </div>
                 </div>
 
+                <!-- Painel: Estética Corporal -->
                 <div class="services-panel" id="tab-corpo" role="tabpanel">
                     <div class="accordion" id="acc-corpo">
-                        <!-- Massagem Relaxante -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Massagem Relaxante</span>
@@ -823,11 +842,11 @@
                                             <img src="fotos/massagem-relaxante.png" alt="Massagem Relaxante"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Massagem%20Relaxante"
+                                            target="_blank" class="btn-primary w-100"
                                             style="text-align: center;">Agendar pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Paz Mental e Bem-Estar</h3>
                                         <p>Usa movimentos suaves, rítmicos e contínuos pelo corpo.</p>
                                         <p>O objetivo é aliviar a tensão muscular, diminuir o estresse do dia a dia e
@@ -837,7 +856,6 @@
                             </div>
                         </div>
 
-                        <!-- Ventosaterapia -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Ventosaterapia</span>
@@ -853,11 +871,11 @@
                                         <div class="service-image-gallery">
                                             <img src="fotos/ventosaterapia.png" alt="Ventosaterapia" loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Ventosaterapia"
+                                            target="_blank" class="btn-primary w-100"
                                             style="text-align: center;">Agendar pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Alívio Profundo de Dores</h3>
                                         <p>É uma técnica terapêutica natural que utiliza copos de acrílico, vidro ou
                                             silicone para criar sucção na pele.</p>
@@ -868,7 +886,6 @@
                             </div>
                         </div>
 
-                        <!-- Massagem Modeladora -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Massagem Modeladora</span>
@@ -885,11 +902,11 @@
                                             <img src="fotos/massagem-modeladora.png" alt="Massagem Modeladora"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Massagem%20Modeladora"
+                                            target="_blank" class="btn-primary w-100"
                                             style="text-align: center;">Agendar pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Melhora do Contorno Corporal</h3>
                                         <p>É uma técnica estética que utiliza movimentos rápidos, intensos e profundos
                                             para atuar na gordura localizada e melhorar o contorno corporal.</p>
@@ -902,9 +919,9 @@
                     </div>
                 </div>
 
+                <!-- Painel: Produção para Eventos -->
                 <div class="services-panel" id="tab-eventos" role="tabpanel">
                     <div class="accordion" id="acc-eventos">
-                        <!-- Produção para Eventos -->
                         <div class="accordion-item">
                             <button class="accordion-trigger" aria-expanded="false">
                                 <span class="acc-icon">✦</span><span>Produção para Eventos (Maquiagem e
@@ -924,11 +941,11 @@
                                             <img src="fotos/Maquiagem-social-e-Waves.jpg" alt="Maquiagem Social"
                                                 loading="lazy">
                                         </div>
-                                        <a href="https://wa.me/5585982024591" target="_blank" class="btn-primary w-100"
+                                        <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Quero%20agendar%20Produ%C3%A7%C3%A3o%20para%20Eventos"
+                                            target="_blank" class="btn-primary w-100"
                                             style="text-align: center;">Agendar pelo WhatsApp</a>
                                     </div>
                                     <div class="service-content-col">
-                                        <!-- TEXTO ORIGINAL DEVOLVIDO -->
                                         <h3>Maquiagem blindada</h3>
                                         <p>Uma maquiagem impecável, de longa duração e resistente à água e suor, ideal
                                             para durar o dia e a noite toda.</p>
@@ -944,10 +961,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="services-cta-bar">
+                    <p>Fale conosco e descubra o tratamento ideal para você.</p>
+                    <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20do%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+                        target="_blank" rel="noopener noreferrer" class="btn-primary">Consultar no WhatsApp</a>
+                </div>
             </div>
         </section>
 
-        <!-- DEPOIMENTOS: Textos Completos Devolvidos -->
+        <!-- DEPOIMENTOS DEVOLVIDOS (TEXTO ORIGINAL) -->
         <section id="depoimentos" class="testimonials-section">
             <div class="section-container">
                 <div class="section-header-centered">
@@ -956,7 +979,6 @@
                 </div>
                 <div class="testimonials-carousel-wrapper">
                     <div class="testimonials-track" id="testimonials-track">
-                        <!-- Card 1 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Bom dia, a make realmente intacta. Experiência incrível."</blockquote>
@@ -968,7 +990,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 2 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Foi uma experiência muito boa, a maquiagem durou até o outro dia, depois de ter
@@ -981,7 +1002,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 3 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Ivyna, que delícia de mimo, eu amei. Muito obrigada por ter cuidado tão bem da
@@ -995,7 +1015,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 4 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Amiga, eu amei tudo, a maquiagem, o cabelo, estava me sentindo uma princesa e
@@ -1008,7 +1027,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 5 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Meu marido elogiou porque o negócio ficou perfeito. Ele sempre elogia, mas
@@ -1021,7 +1039,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 6 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"No dia eu me senti maravilhosa, você realçou detalhes do meu rosto que faz toda
@@ -1035,7 +1052,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 7 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"Só confio nessa profissional para cuidar da minha sobrancelha, a autoestima
@@ -1049,7 +1065,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 8 -->
                         <div class="testimonial-card">
                             <div class="stars" aria-label="5 estrelas">★★★★★</div>
                             <blockquote>"O resultado do tratamento de pele que eu fiz com limpeza de pele,
@@ -1066,7 +1081,6 @@
                         </div>
                     </div>
 
-                    <!-- Controles Restaurados -->
                     <div class="testimonials-controls">
                         <button class="carousel-btn prev" id="carousel-prev" aria-label="Depoimento anterior">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -1110,7 +1124,8 @@
                                 </div>
                                 <div>
                                     <strong>Endereço</strong>
-                                    <span>Rua B 52, Guajeru, Fortaleza – CE</span>
+                                    <!-- ENDEREÇO ORIGINAL RESTAURADO -->
+                                    <span>Bairro Guajeru, Fortaleza – CE</span>
                                 </div>
                             </li>
                             <li>
@@ -1160,6 +1175,19 @@
                                 </div>
                             </li>
                         </ul>
+
+                        <div class="contact-social">
+                            <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+                                target="_blank" rel="noopener noreferrer" class="btn-primary btn-whatsapp"
+                                style="background:#25D366; gap: 10px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                                </svg>
+                            </a>
+                            Agendar pelo WhatsApp
+                        </div>
                     </div>
 
                     <div class="contact-form-card">
@@ -1252,8 +1280,8 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5585982024591" target="_blank" rel="noopener noreferrer" class="float-whatsapp"
-        aria-label="Falar no WhatsApp">
+    <a href="https://wa.me/5585982024591?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20Estetic%20Ivy%27s"
+        target="_blank" rel="noopener noreferrer" class="float-whatsapp" aria-label="Falar no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
@@ -1280,7 +1308,6 @@
         </svg>
     </button>
 
-    <!-- JS OTIMIZADO -->
     <script src="script.js" defer></script>
 </body>
 
