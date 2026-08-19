@@ -209,10 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            let text = `Olá! Meu nome é *${name}*.\n`;
-            if (serviceLabel) text += `Tenho interesse em: *${serviceLabel}*.\n`;
-            if (message) text += `Mensagem: ${message}\n`;
-            text += `\nEnviado pelo site do Espaço Estetic Ivy's.`;
+            let text = `Olá, tudo bem? Vim pelo site do Espaço Estetic Ivy's! ✨\n\n`;
+            text += `Meu nome é *${name}*`;
+            text += serviceLabel ? ` e tenho interesse em *${serviceLabel}*.\n` : `.\n`;
+            if (message) text += `\n${message}\n`;
+            text += `\nAguardo o retorno de vocês!`;
 
             const waUrl = `https://wa.me/5585982024591?text=${encodeURIComponent(text)}`;
             window.open(waUrl, '_blank', 'noopener,noreferrer');
