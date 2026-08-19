@@ -198,15 +198,14 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', e => {
             e.preventDefault();
             const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
             const service = document.getElementById('service');
             const serviceLabel = service && service.selectedIndex > 0
                 ? service.options[service.selectedIndex].text
                 : '';
             const message = document.getElementById('message').value.trim();
 
-            if (!name || !phone) {
-                alert('Por favor, preencha seu nome e WhatsApp para continuar.');
+            if (!name) {
+                alert('Por favor, preencha seu nome para continuar.');
                 return;
             }
 
